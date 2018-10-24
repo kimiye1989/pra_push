@@ -13,9 +13,9 @@ import os
 
 
 # read file #
-f0 = 'coordinates.csv'
-f1 = 'truckSol_test.csv'
-f2 = 'droneSol_test.csv'
+f0 = 'coordinates0.csv'
+f1 = 'truckSol_test0.csv'
+f2 = 'droneSol_test0.csv'
 
 t = pd.read_csv(f1,header = None)
 d = pd.read_csv(f2,header = None)
@@ -93,7 +93,7 @@ def PlotPath(pas, coo):
     
     print(steplists)
     
-    j = 1
+    u = 1
     
     for steplist in steplists:
         
@@ -122,10 +122,10 @@ def PlotPath(pas, coo):
             plt.scatter(listx[-1], listy[-1],color = currentcolor, s = 30)
             
         plt.legend(loc = 'upper right')
-        plt.title('Step_%d'%(j))
-        plt.savefig('Step_%d.png'%(j))
+        plt.title('Step_%d'%(u))
+        plt.savefig('Step_%d.png'%(u))
         
-        j = j+1
+        u = u+1
         
 
 PlotCoordinates(coord)
@@ -133,6 +133,8 @@ PlotCoordinates(coord)
 pathliss =[pathlis1, pathlis2]
 
 PlotPath(pathliss, coord)
+
+print('all has been completed')
 
 
 
